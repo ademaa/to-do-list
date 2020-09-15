@@ -1,0 +1,18 @@
+<%-include("header.ejs"); -%>
+<div class="box" id="heading">
+  <h1><%= listHeading%></h1>
+</div>
+<div class="box">
+    <%for(let i=0 ; i< theItem.length; i++){%>
+    <div class="item">
+      <input type="checkbox">
+      <p class="item"><%=theItem[i]%></p>
+    </div>
+    <%}%>
+
+    <form class="item" action="/" method="post">
+      <input type="text" name="enterItem" placeholder="New Item" autocomplete="off">
+      <button type="submit" name="lists" value="<%= listHeading%>">+</button>
+    </form>
+    </div>
+<%- include('footer.ejs'); -%>
