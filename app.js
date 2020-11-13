@@ -4,13 +4,13 @@ const mongoose = require('mongoose');
 const _ = require('lodash');
 
 const app = express();
-
+const PORT = process.env.PORT || 5000;
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
 app.set("view engine","ejs");
-mongoose.connect('mongodb://localhost:27017/todolistDB',{useNewUrlParser:true , useUnifiedTopology: true,useFindAndModify: false });
+mongoose.connect("mongodb+srv://admin-omar:Test1234@cluster0.d8juq.mongodb.net/todolistDB",{useNewUrlParser:true , useUnifiedTopology: true,useFindAndModify: false });
 const itemsSchema = {
   name: String
 };
@@ -107,6 +107,7 @@ app.post("/delete",(req,res)=>{
 
 });
 
-app.listen(3000, function(){
-  console.log("server started at port 3000!");
+
+app.listen(port, function(){
+  console.log("server started successfully!");
 });
