@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const _ = require('lodash');
 
 const app = express();
-const PORT = process.env.PORT || 5000;
+const port = process.env.PORT || 3000;
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
